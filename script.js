@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 /*  DRINKS PAGE */
 
 function showIngredients(button) {

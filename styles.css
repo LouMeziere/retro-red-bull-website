@@ -31,57 +31,70 @@ body {
     max-width: 800px;
     height: auto;
     display: block;
-      /* Add margin to create space above and below the logo */
+    /* Add margin to create space above and below the logo */
     border-radius: 0px;
 }
-
+/* Style for the navigation links */
 .links {
     background-color: #f0f0f0;
     padding: 30px 0;
-    margin-top: 20px;  /* Adds space between the logo and the links */
-    border-radius: 0px;
+    margin-top: 20px;
     width: 800px;
     text-align: center;
-    border-radius: 0px;
     z-index: 10;
 }
 
-
+/* Main nav links */
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center; /* Horizontally center the links */
-    gap: 35px; /* Space between each link */
+    justify-content: center;
+    gap: 35px;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li a {
-    text-decoration: none; /* Remove underline from links */
-    color: #000b8d; /* Text color */
-    padding: 12px 20px; /* Add padding inside the links */
-    background-color: #ffffff; /* White background for each link */
-    border: 3px solid #000b8d; /* Border around links */
-    border-radius: 0px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+    text-decoration: none;
+    color: #000b8d;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border: 3px solid #000b8d;
+    border-radius: 0px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-links li a:hover {
-    background-color: #000b8d; /* Change background on hover */
-    color: #ffffff; /* Change text color on hover */
+    background-color: #000b8d;
+    color: #ffffff;
 }
 
 .nav-links li a.active {
-    background-color: #000b8d; /* Highlight the active link */
-    color: #ffffff; /* White text color for active link */
+    background-color: #000b8d;
+    color: #ffffff;
 }
 
 .nav-links li a.active:hover {
-    background-color: #ffffff; /* White background when hovered */
+    background-color: #ffffff;
     border: 3px solid #000b8d;
     color: #000b8d;
 }
 
+
+
+
+/* For screens smaller than 500px */
+@media (max-width: 500px) {
+    .nav-links li a {
+        font-size: 14px; /* Smaller font size */
+        padding: 8px; /* Reduced padding */
+    }
+
+    .nav-links {
+        justify-content: center; /* Ensure links are centered on smaller screens */
+        gap: 10px; /* Adjust space between items */
+    }
+}
 
 
 
@@ -443,7 +456,19 @@ body {
     }
 }
 
+@media (max-width: 500px) {
+    .can-container:hover .can-image,
+    .can-container:hover .wings-image {
+        transform: translateX(-140px) scale(0.8); /* Move both can and wings further to the left and scale them down */
+        opacity: 0; /* Slightly fade the images */
+    }
 
+    .can-info {
+        display: flex; /* Ensure proper alignment works */
+        align-items: center; /* Vertically align content within the container */
+        justify-content: center; /* Horizontally align content if needed */
+    }
+}
 
 
 
@@ -800,4 +825,18 @@ button {
 .mcconkey {
     margin-bottom: 0px;
 }
+
+@media (max-width: 500px) {
+    #athlete-container {
+        width: 100%; /* Ensure the container spans the full width */
+    }
+    #athlete-info {
+        height: auto; /* Allow height to adjust based on content */
+        min-height: 50px; /* Ensure a minimum height */
+        padding: 10px; /* Add some padding for better spacing */
+        box-sizing: border-box; /* Include padding in the element's width/height */
+        overflow: hidden; /* Prevent content overflow */
+    }
+}
+
 
