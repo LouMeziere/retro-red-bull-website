@@ -5,77 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red Bull Events</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet if needed -->
-    <style>
-        /* Basic styles for layout */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #000b8d;
-            margin-bottom: 30px;
-        }
-
-        .event-section {
-            margin-bottom: 40px;
-        }
-
-        .event-title {
-            font-size: 28px;
-            color: #000b8d;
-            margin-bottom: 20px;
-        }
-
-        iframe {
-            display: block;
-            margin: 0 auto;
-            border-radius: 8px;
-        }
-
-        .event-description {
-            text-align: center;
-            font-size: 16px;
-            color: #666;
-        }
-    </style>
+    
 </head>
 <body>
-    <div class="container">
-        <h1>Red Bull Events</h1>
-
-        <!-- Formula One Event -->
-        <div class="event-section" id="formula-one">
-            <h2 class="event-title">Formula One</h2>
-            <iframe src="https://giphy.com/embed/Irb20yXtA2QStkUnrE" width="287" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <p class="event-description"><a href="https://giphy.com/gifs/redbullracing-f1-red-bull-racing-Irb20yXtA2QStkUnrE">via GIPHY</a></p>
+    <header class="retro-header">
+        <div class="container-img-header">
+            <img src="pictures/redbull_retro_logo.png" alt="Logo"/>
         </div>
-
-        <!-- Soapbox Races Event -->
-        <div class="event-section" id="soapbox-races">
-            <h2 class="event-title">Soapbox Races</h2>
-            <iframe src="https://giphy.com/embed/l0NwvUd7IEjn1764U" width="480" height="274" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <p class="event-description"><a href="https://giphy.com/gifs/redbull-l0NwvUd7IEjn1764U">via GIPHY</a></p>
+        <nav class="links">
+            <ul class="nav-links">
+                <li><a href="index.html" class="home-nav">Home</a></li>
+                <li><a href="drinks.html">Drinks</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="athletes.html">Athletes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+        <div class="container-events">
+            <section class="section-title">
+                <h1>OUR EVENTS ® Sponsored</h1>
+                <p>Red Bull Gives You Wings.</p>
+            </section>
+            <div class="event-container">
+                <!-- Formula One Event -->
+                <div class="event" style="background-color: #ffd300;">
+                    <div class="event-content">
+                        <iframe src="https://giphy.com/embed/3oEdvcDQ8ce8xxdV2o" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbull-3oEdvcDQ8ce8xxdV2o"></a></p>
+                        <div class="event-text-parent" >
+                            <div class="event-text">
+                                <h2>Flugtag</h2>
+                                <p>Red Bull's Flugtag event has been held annually since 1992. Teams launch their homemade flying machines, combining imagination and humor with serious competition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="event" style="background-color: #e21b4d;">
+                    <div class="event-content reverse">
+                        <iframe src="https://giphy.com/embed/UzvlLpSulVBn7ZIucS" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbullracing-f1-red-bull-racing-UzvlLpSulVBn7ZIucS"></a></p>
+                        <div class="event-text-parent" >
+                            <div class="event-text">
+                                <h2>Formula 1</h2>
+                                <p>Red Bull Racing is a Formula One powerhouse known for daring leadership and innovation. It evolved from a sponsorship to owning Jaguar Racing in 2004.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="event" style="background-color: #f4ebee;">
+                    <div class="event-content">
+                        <iframe src="https://giphy.com/embed/3oEduX1qIWLc9rIArS" width="480" height="264"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbull-3oEduX1qIWLc9rIArS"></a></p>
+                        <div class="event-text-parent" >
+                            <div class="event-text">
+                                <h2>X Games</h2>
+                                <p>The X Games, powered by Red Bull, showcase the world's top athletes in extreme sports like skateboarding, snowboarding, BMX, and motocross.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="event" style="background-color: #000b8d;">
+                    <div class="event-content reverse">
+                        <iframe src="https://giphy.com/embed/3o6gbejVeIxxngWAmc" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbull-3o6gbejVeIxxngWAmc"></a></p>
+                        <div class="event-text-parent" >
+                            <div class="event-text">
+                                <h2>Cliff Diving Championship</h2>
+                                <p>Red Bull's Cliff Diving World Series features gravity-defying dives from heights of up to 27 meters, showcasing athleticism and precision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="event" style="background-color: #ffd300;">
+                    <div class="event-content">
+                        <iframe src="https://giphy.com/embed/26tnh3mtcOgR7IVb2" width="480" height="254" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbull-26tnh3mtcOgR7IVb2"></a></p>
+                        <div class="event-text-parent">
+                            <div class="event-text">
+                                <h2>Rampage</h2>
+                                <p>Red Bull Rampage tests mountain biking skill, with riders navigating steep cliffs and performing jaw-dropping stunts in Utah's desert landscape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Ski Event -->
-        <div class="event-section" id="ski">
-            <h2 class="event-title">Ski</h2>
-            <iframe src="https://giphy.com/embed/3o6Mb5vZliC9MGIYiQ" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <p class="event-description"><a href="https://giphy.com/gifs/ski-skiing-3o6Mb5vZliC9MGIYiQ">via GIPHY</a></p>
-        </div>
-    </div>
+    </main>
+    <footer class="retro-footer">
+        <p>&copy; 2024 Retro Red Bull | All Rights Reserved</p>
+    </footer>
+    <script defer src="script.js"></script>
 </body>
 </html>

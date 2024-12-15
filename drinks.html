@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Athletes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="retro-header">
+        <div class="container-img-header">
+            <img src="pictures/redbull_retro_logo.png" alt="Logo"/>
+        </div>
+        <nav class="links">
+            <ul class="nav-links">
+                <li><a href="index.html" class="home-nav">Home</a></li>
+                <li><a href="drinks.html">Drinks</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="athletes.html">Athletes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+        <div class="container-drinks">
+            <section class="section-title">
+                <h1>OUR SELECTION ® Energy Drink</h1>
+                <p>Red Bull Gives You Wings.</p>
+            </section>
+
+            <!-- Regular Red Bull Can -->
+            <div class="can-container">
+                <img src="pictures/redbull-can.png" alt="Red Bull Can" class="can-image" />
+                <img src="gifs/wings.gif" alt="Red Bull Wings" class="wings-image" />
+                <div class="can-info">
+                    <p>Red Bull was created in 1987 and revolutionized the energy drink market. It's known for its high caffeine and taurine content, providing a quick energy boost.</p>
+                    <button class="button-ingr" onclick="showIngredients(this)">Show Ingredients</button>
+                    <p class="ingredients" style="display: none;">Ingredients: Caffeine, Taurine, B vitamins, Sugars, Water.</p>
+                </div>
+            </div>
+
+            <!-- Sugar-Free Red Bull Can -->
+            <div class="can-container">
+                <img src="pictures/sugar-free-can.png" alt="Sugar-Free Red Bull Can" class="can-image" />
+                <img src="gifs/wings.gif" alt="Red Bull Wings" class="wings-image" />
+                <div class="can-info">
+                    <p>Red Bull Sugarfree offers the same energizing benefits as the original but without the sugar, perfect for those looking for a lower-calorie option.</p>
+                    <button class="button-ingr" onclick="showIngredients(this)">Show Ingredients</button>
+                    <p class="ingredients" style="display: none;">Ingredients: Caffeine, Taurine, B vitamins, Sucralose & Acesulfame K, Water.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+    <footer class="retro-footer">
+        <p>&copy; 2024 Retro Red Bull | All Rights Reserved</p>
+    </footer>
+    <script defer src="script.js"></script>
+</body>
+</html>

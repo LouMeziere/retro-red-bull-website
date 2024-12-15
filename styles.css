@@ -10,8 +10,6 @@ body {
 
 
 
-
-
 .retro-header {
     display: flex;
     flex-direction: column;  /* Stack items vertically */
@@ -45,6 +43,7 @@ body {
     width: 800px;
     text-align: center;
     border-radius: 0px;
+    z-index: 10;
 }
 
 
@@ -52,7 +51,7 @@ body {
     list-style: none;
     display: flex;
     justify-content: center; /* Horizontally center the links */
-    gap: 15px; /* Space between each link */
+    gap: 35px; /* Space between each link */
     margin: 0;
     padding: 0;
 }
@@ -72,16 +71,21 @@ body {
     color: #ffffff; /* Change text color on hover */
 }
 
-.nav-links li a.home-nav {
-    background-color: #000b8d; /* Change background on hover */
-    color: #ffffff;
+.nav-links li a.active {
+    background-color: #000b8d; /* Highlight the active link */
+    color: #ffffff; /* White text color for active link */
 }
 
-.nav-links li a.home-nav:hover {
-    background-color: #ffffff; /* White background for each link */
-    border: 3px solid #000b8d; 
+.nav-links li a.active:hover {
+    background-color: #ffffff; /* White background when hovered */
+    border: 3px solid #000b8d;
     color: #000b8d;
 }
+
+
+
+
+
 
 
 
@@ -95,6 +99,7 @@ body {
     border-radius: 0px; /* Optional: No rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
     text-align: center; /* Center text */
+    position: relative; /* Enable absolute positioning of the image */
 }
 
 .container {
@@ -102,9 +107,23 @@ body {
     border-radius: 0px; /* Optional: No rounded corners */
     border: 4px solid #000b8d; /* Blue border */
     margin: 0px 20px; /* Add space around the container */
+    position: relative;
 }
 
-
+.container::before {
+    content: ""; /* Create a pseudo-element for the image */
+    position: absolute; /* Position absolutely within the container */
+    top: 58%; /* Vertically center */
+    left: 64%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust position to ensure perfect centering */
+    background-image: url('pictures/bull-logo.png'); /* Set the image as the background */
+    background-size: contain; /* Ensure the image scales proportionally */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 130%; /* Set an appropriate width for the image */
+    height: 130%; /* Set an appropriate height for the image */
+    opacity: 0.2; /* Set the transparency of the image */
+    z-index: 1;
+}
 
 
 
@@ -126,13 +145,13 @@ body {
 }
 
 
-.introduction {
+.section-title {
     text-align: left;
     padding: 10px;
     color: #000b8d;
 }
 
-.introduction p {
+.section-title p {
     color: #e21b4d;
 }
 .retro-section {
@@ -153,10 +172,10 @@ body {
     padding-bottom: 5px;   /* Padding to give space between the text and underline */
     position: relative;    /* Allow positioning of the gif */
     width: 100%;           /* Ensure the <h2> takes up the full width */
+    z-index: 1;
 }
 
-/* The gif appears on hover */
-.retro-section h2:hover::after {
+.retro-section h2::after {
     content: ''; /* Create the pseudo-element */
     display: inline-block; /* Keep the GIF inline with the text */
     width: 40px; /* Set the size of the GIF */
@@ -166,6 +185,7 @@ body {
     background-repeat: no-repeat; /* Don't repeat the image */
     margin-left: 10px; /* Add space between the title and the GIF */
     vertical-align: middle; /* Vertically align the GIF with the text */
+    z-index: 0;
 }
 
 
@@ -210,19 +230,374 @@ body {
 }
 
 
-
-
-
-
-.retro-footer {
-    text-align: center;
-    padding: 10px;
-    color: #ffd300;
+@media screen and (max-width: 768px) {
+    .container::before {
+        content: ""; /* Create a pseudo-element for the image */
+        position: absolute; /* Position absolutely within the container */
+        top: 60%; /* Vertically center */
+        left: 50%; /* Horizontally center */
+        transform: translate(-50%, -50%); /* Adjust position to ensure perfect centering */
+        background-image: url('pictures/bull-logo.png'); /* Set the image as the background */
+        background-size: contain; /* Ensure the image scales proportionally */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        width: 80%; /* Set an appropriate width for the image */
+        height: 80%; /* Set an appropriate height for the image */
+        opacity: 0.2; /* Set the transparency of the image */
+        z-index: 1;
+    }
 }
 
 
 
 
+
+
+
+.retro-footer {
+    margin-top: auto; /* Pushes the footer to the end of the content */
+    padding: 5px 0px;
+    color: #f4ebee;
+    font-weight: bold;
+    background-color: #000b8d;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust this value to set the distance from the bottom */
+}
+
+.retro-footer p {
+    font: 1px;
+}
+
+
+
+/* DRINKS */
+
+.container-drinks {
+    background: #f4ebee;
+    border-radius: 0px; /* Optional: No rounded corners */
+    border: 4px solid #000b8d; /* Blue border */
+    margin: 0px 20px; /* Add space around the container */
+    position: relative;
+}
+
+.container-drinks::before {
+    content: ""; /* Create a pseudo-element for the image */
+    position: absolute; /* Position absolutely within the container */
+    top: 57%; /* Vertically center */
+    left: 66%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust position to ensure perfect centering */
+    background-image: url('pictures/redbull_retro.png'); /* Set the image as the background */
+    background-size: 75%; /* Ensure the image scales proportionally */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 130%; /* Set an appropriate width for the image */
+    height: 130%; /* Set an appropriate height for the image */
+    opacity: 0.2; /* Set the transparency of the image */
+}
+
+
+.can-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevents overflow when hovering */
+    height: 300px; /* Ensure the container has a fixed height */
+}
+
+.can-image, .wings-image {
+    transition: transform 0.3s ease;
+}
+
+.can-image {
+    width: 150px;
+    height: 300px;
+    z-index: 10; /* Keeps the can on top */
+}
+
+.wings-image {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: 5; /* Ensures wings stay behind the can */
+}
+
+.can-info {
+    display: none;
+    position: absolute;
+    top: 50%; /* Start vertically centered */
+    left: 100%; /* Start off to the right */
+    transform: translateY(-50%) translateX(10px); /* Center vertically and slightly off-screen */
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start with invisible text */
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Smooth transition for both opacity and position */
+}
+
+.can-container:hover .can-image,
+.can-container:hover .wings-image {
+    transform: translateX(-150px); /* Move both can and wings further to the left */
+}
+
+.can-container:hover .can-info {
+    display: block;
+    transform: translateX(-120%) translateY(-50%); /* Move the info in from the right while staying centered */
+    opacity: 1; /* Make the text fully visible */
+}
+
+
+
+@media (max-width: 650px) {
+    /* DRINKS */
+    
+    .container-drinks {
+        background: #f4ebee;
+        border-radius: 0px; /* Optional: No rounded corners */
+        border: 4px solid #000b8d; /* Blue border */
+        margin: 0px 20px; /* Add space around the container */
+        position: relative;
+        overflow: hidden; /* Prevent overflow on hover */
+    }
+
+    .container-drinks::before {
+        content: ""; /* Create a pseudo-element for the image */
+        position: absolute; /* Position absolutely within the container */
+        top: 80%; /* Vertically center */
+        left: 66%; /* Horizontally center */
+        transform: translate(-50%, -50%); /* Adjust position to ensure perfect centering */
+        background-image: url('pictures/redbull_retro.png'); /* Set the image as the background */
+        background-size: 75%; /* Ensure the image scales proportionally */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        width: 130%; /* Set an appropriate width for the image */
+        height: 130%; /* Set an appropriate height for the image */
+        opacity: 0.2; /* Set the transparency of the image */
+    }
+
+    .can-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden; /* Prevents overflow when hovering */
+        height: 250px; /* Adjust height for smaller screens */
+        margin-bottom: 20px; /* Space between items */
+    }
+
+    .can-image, .wings-image {
+        transition: transform 0.3s ease, opacity 0.5s ease; /* Smooth transition for both transform and opacity */
+    }
+
+    .can-image {
+        width: 100px; /* Smaller size for the can image */
+        height: 200px;
+        z-index: 10; /* Keeps the can on top */
+        opacity: 1; /* Full opacity for the can */
+    }
+
+    .wings-image {
+        width: 200px; /* Smaller wings image */
+        height: auto;
+        position: absolute;
+        top: 0;
+        z-index: 5; /* Ensures wings stay behind the can */
+        opacity: 0.5; /* Reduced opacity for the wings */
+    }
+
+    .can-info {
+        display: none;
+        position: absolute;
+        top: 50%; /* Start vertically centered */
+        left: 100%; /* Start off to the right */
+        transform: translateY(-50%) translateX(10px); /* Center vertically and slightly off-screen */
+        width: 250px; /* Adjust width */
+        padding: 15px;
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 0px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0; /* Start with invisible text */
+        transition: opacity 0.5s ease, transform 0.3s ease; /* Smooth transition for both opacity and position */
+    }
+
+    .can-container:hover .can-image,
+    .can-container:hover .wings-image {
+        transform: translateX(-140px) scale(0.8); /* Move both can and wings further to the left and scale them down */
+        opacity: 0.7; /* Slightly fade the images */
+    }
+
+    .can-container:hover .can-info {
+        display: block;
+        transform: translateX(-120%) translateY(-50%); /* Move the info in from the right while staying centered */
+        opacity: 1; /* Make the text fully visible */
+    }
+
+    /* For image hover effect: */
+    .can-container:hover .container-drinks::before {
+        opacity: 1; /* Make the image fully visible on hover */
+        transform: translate(-60%, -50%) scale(0.7); /* Slightly scale down and slide the image */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* EVENTS */
+.container-events {
+    overflow: auto; /* Ensure scrolling is enabled */
+    background: #f4ebee;
+    border-radius: 0px; /* Optional: No rounded corners */
+    border: 4px solid #000b8d; /* Blue border */
+    margin: 0px 20px; /* Add space around the container */
+    position: relative;
+}
+
+.container-events::before {
+    content: ""; /* Create a pseudo-element for the image */
+    position: absolute; /* Position absolutely within the container */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust position to ensure perfect centering */
+    
+    background-size: contain; /* Ensure the image scales proportionally */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 100%; /* Limit to the container's width */
+    height: 100%; /* Limit to the container's height */
+    opacity: 0.2; /* Set the transparency of the image */
+    pointer-events: none; /* Prevent interaction blocking */
+}
+
+.event-container {
+    width: 83%;
+    max-width: 800px;
+    height: 300px; /* Set fixed height for the scrollable container */
+    margin: 0 auto;
+    padding: 10px;
+    overflow-y: scroll; /* Use scroll instead of auto to force scrolling */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.event-container iframe {
+    height: 200px;
+    width: 250px;
+}
+
+.event {
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.event-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.event-content.reverse p {
+    color: #d9d4ce;
+}
+
+
+.event-gif {
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
+.event-text {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: left; /* Align text to the left */
+    min-height: 150px; /* Ensure there's enough height for vertical centering */
+}
+
+.event-text h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0; /* Remove any default margin to align precisely */
+    text-align: center;
+}
+
+.event-text p {
+    font-size: 16px;
+    color: #666;
+    width: 80%; /* Ensure paragraph takes up the full width of the container */
+    text-align: center; /* Left-aligns text in the paragraph */
+}
+
+/* Style the scrollbar track */
+.event-container::-webkit-scrollbar {
+    width: 40px; /* Set the scrollbar width */
+}
+
+/* Style the thumb (scroll handle) */
+.event-container::-webkit-scrollbar-thumb {
+    background: url('pictures/redbull-can.png'); /* Add the image */
+    background-size: 90%; /* Scale the image to fit */
+    border-radius: 8px; /* Rounded scrollbar */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Style the scrollbar track (background) */
+.event-container::-webkit-scrollbar-track {
+    background: #f4ebee; /* Light background color */
+}
+
+
+@media screen and (max-width: 768px) {
+    .event-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .event-content.reverse {
+        flex-direction: column; /* Reverse the order for the 'reverse' class */
+    }
+
+    .event-text {
+        order: 1; /* Ensure text comes first in the layout */
+        margin-bottom: 15px; /* Add space below the text */
+    }
+
+    .event-gif {
+        margin-top: 15px; /* Add space between the text and the gif */
+        margin-left: 0; /* Remove left margin for better alignment */
+        margin-right: 0; /* Remove right margin for better alignment */
+        max-width: 100%; /* Make sure the gif is responsive */
+    }
+
+    .event-container iframe {
+        width: 100%; /* Make the iframe full width on small screens */
+        height: auto; /* Adjust the height based on the content */
+        margin-top: 15px; /* Space between iframe and text */
+    }
+}
 
 
 
@@ -235,24 +610,37 @@ body {
 
 /* ATHLETES */
 
-/* General styles for the page */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+.container-athlete {
+    position: relative; /* Ensure the container is a positioning context */
+    background: #f4ebee; /* Fallback solid color */
+    border-radius: 0px; /* No rounded corners */
+    border: 4px solid #000b8d; /* Blue border */
+    margin: 0px 20px; /* Add space around the container */
+    overflow: hidden; /* Prevent content from overflowing */
+    padding: 20px; /* Add padding inside the container */
+    color: #000; /* Text color for content */
 }
 
-/* Container for the athlete section */
-
-
-/* Title of the athletes section */
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    color: #000b8d;
-    margin-bottom: 30px;
+/* Transparent overlay for the background image */
+.container-athlete::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('pictures/background-bulls-horiz.png') center/cover no-repeat; /* Add the background image */
+    opacity: 0.4; /* Adjust transparency (0.0 is fully transparent, 1.0 is fully opaque) */
+    z-index: 1; /* Place it behind the content */
 }
+
+/* Ensure the content is above the background */
+.container-athlete * {
+    position: relative;
+    z-index: 2; /* Place the content above the pseudo-element */
+}
+
+
 
 /* Flexbox for athlete list */
 .athlete-list {
@@ -297,4 +685,131 @@ body {
     font-size: 16px;
     color: #777;
     line-height: 1.5;
+}
+
+
+/* Landing Section */
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly bigger */
+    }
+}
+
+#landing {
+    text-align: center; /* Center the text inside the div */
+    margin: 0 auto; /* Horizontally center the entire div */
+    margin-bottom: 30px;
+    background-color: white;
+    width: 80%; /* Define the width of the div */
+    padding: 20px 10px;
+    animation: pulse 4s infinite; /* Apply the pulse animation */
+}
+
+
+
+
+#landing p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color:#000b8d;
+}
+
+
+button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Game Section */
+.hidden {
+    display: none;
+}
+
+#game {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#athlete-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#athlete-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#options button {
+    flex: 1;
+}
+
+/* Result Section */
+#result {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#result-gif {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#score {
+    font-size: 1.2rem;
+    color: #1d1d1d;
+}
+
+/* Info Section */
+#info {
+    margin-top: 30px;
+}
+
+.athlete-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.athlete {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.athlete img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.athlete-name {
+    font-size: 1.2rem;
+    color: #000b8d;
+    margin-bottom: 5px;
+}
+
+.athlete-description {
+    font-size: 0.9rem;
+    color: #666;
 }

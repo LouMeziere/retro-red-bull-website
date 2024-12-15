@@ -7,27 +7,77 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="athletes-section">
-        <div class="container">
-            <h1 class="section-title">Our Athletes</h1>
-            <div class="athlete-list">
-                <div class="athlete">
-                    <img src="pictures/gerhard-berger.jpg" alt="Gerhard Berger" class="athlete-img">
-                    <h2 class="athlete-name">Gerhard Berger</h2>
-                    <p class="athlete-description">An Austrian former Formula One driver, known for his exciting racing style.</p>
+    <header class="retro-header">
+        <div class="container-img-header">
+            <img src="pictures/redbull_retro_logo.png" alt="Logo">
+        </div>
+        <nav class="links">
+            <ul class="nav-links">
+                <li><a href="index.html" class="home-nav">Home</a></li>
+                <li><a href="drinks.html">Drinks</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="athletes.html">Athletes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home">
+        <div class="container-athlete">
+
+            <h1 class="section-title">OUR ATHLETES ® Sponsored</h1>
+            <div id="landing">
+                <p>Do you want to test how well you know early Red Bull athletes?</p>
+                <button id="play-game">Yes</button>
+                <button id="show-info">No</button>
+            </div>
+
+            <div id="game" class="hidden">
+                <div id="question-container">
+                    <img id="athlete-image" src="" alt="Athlete" class="athlete-img">
+                    <h2 id="athlete-name"></h2>
+                    <div id="options"></div>
                 </div>
-                <div class="athlete">
-                    <img src="pictures/xeno-muller.jpg" alt="Xeno Muller" class="athlete-img">
-                    <h2 class="athlete-name">Xeno Muller</h2>
-                    <p class="athlete-description">A champion Swiss rower who has competed in several Olympic Games.</p>
+                <button id="next-question" class="hidden">Next</button>
+            </div>
+
+            <div id="result" class="hidden">
+                <div class="gif">
+                    <img id="result-gif" src="" alt="Result">
                 </div>
-                <div class="athlete">
-                    <img src="pictures/shane-mcconkey.webp" alt="Shane McConkey" class="athlete-img">
-                    <h2 class="athlete-name">Shane McConkey</h2>
-                    <p class="athlete-description">A pioneer in extreme skiing, known for his groundbreaking work in ski jumping and BASE jumping.</p>
+                <p id="score"></p>
+            </div>
+
+            <div id="info" class="hidden">
+                <div class="athlete-list">
+                    <div class="athlete">
+                        <img src="pictures/athletes/gerhard-berger.jpg" alt="Gerhard Berger" class="athlete-img">
+                        <h2 class="athlete-name">Gerhard Berger</h2>
+                        <p class="athlete-description">An Austrian former Formula One driver, known for his exciting racing style.</p>
+                    </div>
+                    <div class="athlete">
+                        <img src="pictures/athletes/xeno-muller-action.jpg" alt="Xeno Müller" class="athlete-img">
+                        <h2 class="athlete-name">Xeno Müller</h2>
+                        <p class="athlete-description">A champion Swiss rower who has competed in several Olympic Games.</p>
+                    </div>
+                    <div class="athlete">
+                        <img src="pictures/athletes/miles-dashier.jpg" alt="Miles Dashier" class="athlete-img">
+                        <h2 class="athlete-name">Miles Daisher</h2>
+                        <p class="athlete-description">A pioneer in extreme skiing, known for his groundbreaking work in ski jumping and BASE jumping.</p>
+                    </div>
+                    <div class="athlete">
+                        <img src="pictures/athletes/shane-mcconkey-portrait.jpeg" alt="Shane McConkey" class="athlete-img">
+                        <h2 class="athlete-name">Shane McConkey</h2>
+                        <p class="athlete-description">A pioneer in extreme skiing, known for his groundbreaking work in ski jumping and BASE jumping.</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-    </section>
+    </main>
+    <footer class="retro-footer">
+        <p>&copy; 2024 Retro Red Bull | All Rights Reserved</p>
+    </footer>
+    <script defer src="script.js"></script>
 </body>
 </html>
+
