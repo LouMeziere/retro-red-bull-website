@@ -491,7 +491,7 @@ body {
 
     .can-container:hover .can-info {
         display: block;
-        transform: translateX(-107%) translateY(-50%); /* Move the info in from the right while staying centered */
+        transform: translateX(-110%) translateY(-50%); /* Move the info in from the right while staying centered */
         opacity: 1; /* Make the text fully visible */
     }
 
