@@ -485,8 +485,8 @@ body {
 
     .can-container:hover .can-image,
     .can-container:hover .wings-image {
-        transform: translateX(-140px) scale(0.8); /* Move both can and wings further to the left and scale them down */
-        opacity: 0; /* Slightly fade the images */
+        transform: translateX(-150px) scale(0.8); /* Move both can and wings further to the left and scale them down */
+        opacity: 0.4; /* Slightly fade the images */
     }
 
     .can-container:hover .can-info {
