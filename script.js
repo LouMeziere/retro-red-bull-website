@@ -76,23 +76,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const athleteImage = document.getElementById('athlete-image');
         athleteImage.src = athlete.image;
     
-        // Set the same width and height for all images
-        athleteImage.style.width = "300px"; // Set the width to 300px
-        athleteImage.style.height = "300px"; // Set the height to 300px
-        athleteImage.style.objectFit = "cover"; // Ensures that the aspect ratio is preserved while covering the entire space
+        // Set consistent image dimensions
+        athleteImage.style.width = "300px";
+        athleteImage.style.height = "300px";
+        athleteImage.style.objectFit = "cover";
     
         document.getElementById('athlete-name').textContent = athlete.name;
     
         const optionsDiv = document.getElementById('options');
         optionsDiv.innerHTML = ''; // Clear previous options
-        athlete.options.forEach((option, index) => {
+    
+        // Filter options based on screen size
+        const isSmallScreen = window.innerWidth <= 500;
+        const filteredOptions = isSmallScreen ? athlete.options.slice(0, 3) : athlete.options;
+    
+        // Display options
+        filteredOptions.forEach((option) => {
             const button = document.createElement('button');
             button.textContent = option;
-            button.className = 'option-button'; // Apply the CSS class
+            button.className = 'option-button';
             button.addEventListener('click', () => handleAnswer(option));
             optionsDiv.appendChild(button);
         });
     };
+    
+    // Handle resizing
+    window.addEventListener('resize', () => {
+        loadQuestion();
+    });
+    
+    
+    
 
     const handleAnswer = (selectedOption) => {
         const athlete = athletes[currentQuestionIndex];

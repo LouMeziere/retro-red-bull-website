@@ -84,15 +84,29 @@ body {
 
 
 /* For screens smaller than 500px */
+/* For screens smaller than 500px */
 @media (max-width: 500px) {
-    .nav-links li a {
-        font-size: 14px; /* Smaller font size */
-        padding: 8px; /* Reduced padding */
+    .retro-header img {
+        max-width: 90%; /* Constrain image width */
+        margin: 0 auto; /* Center image */
+        display: block; /* Ensure it behaves as a block element */
+    }
+
+    .links {
+        width: 100%; /* Make the container responsive */
+        max-width: 800px; /* Keep the max-width for larger screens */
+        margin: 20px auto; /* Center it horizontally */
     }
 
     .nav-links {
-        justify-content: center; /* Ensure links are centered on smaller screens */
-        gap: 10px; /* Adjust space between items */
+        
+        justify-content: center; /* Center navigation links */
+        gap: 10px; /* Adjust spacing between items */
+    }
+
+    .nav-links li a {
+        font-size: 14px; /* Reduce font size */
+        padding: 8px; /* Reduce padding for better fit */
     }
 }
 
@@ -244,6 +258,10 @@ body {
 
 
 @media screen and (max-width: 768px) {
+    .container {
+        margin: 0px 15px; /* Add space around the container */
+    }
+    
     .container::before {
         content: ""; /* Create a pseudo-element for the image */
         position: absolute; /* Position absolutely within the container */
@@ -457,16 +475,32 @@ body {
 }
 
 @media (max-width: 500px) {
+    .container-drinks {
+        margin: 0px 15px;
+    }
+
+    .container-drinks::before {
+        background-image: none;
+    }
+
     .can-container:hover .can-image,
     .can-container:hover .wings-image {
         transform: translateX(-140px) scale(0.8); /* Move both can and wings further to the left and scale them down */
         opacity: 0; /* Slightly fade the images */
     }
 
+    .can-container:hover .can-info {
+        display: block;
+        transform: translateX(-107%) translateY(-50%); /* Move the info in from the right while staying centered */
+        opacity: 1; /* Make the text fully visible */
+    }
+
     .can-info {
         display: flex; /* Ensure proper alignment works */
         align-items: center; /* Vertically align content within the container */
-        justify-content: center; /* Horizontally align content if needed */
+        justify-content: center; /* Horizontally align content */
+        text-align: center; /* Ensure text inside is centered */
+        flex-direction: column;
     }
 }
 
@@ -627,11 +661,28 @@ body {
         height: auto; /* Adjust the height based on the content */
         margin-top: 15px; /* Space between iframe and text */
     }
+    .event-container {
+        width: 90%;
+    }
+
+    .event-container::-webkit-scrollbar {
+        width: 30px; /* Set the scrollbar width */
+    }
 }
 
+@media (max-width: 500px) {
+    .container-events {
+        margin: 0px 15px;
+    }
 
+    .event-text p {
+        width: 95%;
+    }
 
-
+    .event-container {
+        height: 490px;
+    }
+}
 
 
 
@@ -675,7 +726,7 @@ body {
 }
 
 
-
+/* Athletes */
 /* Landing Section */
 
 @keyframes pulse {
@@ -827,15 +878,34 @@ button {
 }
 
 @media (max-width: 500px) {
-    #athlete-container {
-        width: 100%; /* Ensure the container spans the full width */
+    .container-athlete {
+        margin: 0px 15px;
     }
-    #athlete-info {
-        height: auto; /* Allow height to adjust based on content */
-        min-height: 50px; /* Ensure a minimum height */
-        padding: 10px; /* Add some padding for better spacing */
-        box-sizing: border-box; /* Include padding in the element's width/height */
-        overflow: hidden; /* Prevent content overflow */
+    .athlete-info {
+        width: 80%;
+    }
+    #athlete-container {
+        height: 345px; 
+        width: 100%;
+    }
+
+    .athlete {
+        max-width: 400px; /* Optional: set a max width for better layout */
+        height: auto; /* Allow dynamic height adjustment */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .athlete img {
+        width: 120px; /* Smaller size for smaller screens */
+        height: 120px;
+    }
+
+    .athlete-name {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .athlete-description {
+        font-size: 0.8rem; /* Adjust font size */
     }
 }
 
